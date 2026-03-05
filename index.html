@@ -92,10 +92,10 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
 
 /* Updated Logo Styles - Bigger and Better Fitted */
 .logo-mark {
-  width: 90px;  /* Increased from 64px */
-  height: 90px; /* Increased from 64px */
+  width: 150px;  /* Increased from 64px */
+  height: 120px; /* Increased from 64px */
   border-radius: 50%;
-  background: conic-gradient(from 0deg, var(--green), var(--gold), var(--red), var(--green));
+  background: conic-gradient(from 0deg, var(--blue), var(--white), var(--blue), var(--white));
   padding: 4px; /* Slightly increased padding */
   flex-shrink: 0;
   animation: logo-spin 12s linear infinite;
@@ -124,8 +124,8 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
 
 /* Logo Image Placeholder Styles */
 .logo-image {
-  width: 100%;
-  height: 100%;
+  width: 250%;
+  height: 120%;
   object-fit: cover; /* Makes image cover the entire area */
   object-position: center;
   display: block;
@@ -138,8 +138,8 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--green), var(--gold));
-  color: var(--white);
+  background: linear-gradient(135deg, var(--blue), var(--white));
+  color: var(--blue);
   font-weight: 900;
   font-size: 24px; /* Larger font for fallback */
   font-family: var(--font-body);
@@ -847,7 +847,7 @@ nav a:hover { background: var(--black); color: var(--gold); }
   <div class="container">
     <div class="footer-grid">
       <div>
-        <h4>Pan-African Youth Conclave</h4>
+        <h4>Pan-African Youth Conference</h4>
         <p>Empowering Africa's next generation of leaders through innovation, inclusion, and action since 2001.</p>
       </div>
       <div>
@@ -879,7 +879,7 @@ nav a:hover { background: var(--black); color: var(--gold); }
     </div>
     <div class="footer-bottom">
       <div class="footer-flag"><span class="ff-g"></span><span class="ff-y"></span><span class="ff-r"></span></div>
-      <p>© 2026 Pan-African Youth Conclave · All Rights Reserved · Built for Africa's Future</p>
+      <p>© 2026 Pan-African Youth Conference · All Rights Reserved · Built for Africa's Future</p>
       <div class="footer-flag"><span class="ff-g"></span><span class="ff-y"></span><span class="ff-r"></span></div>
     </div>
   </div>
@@ -921,7 +921,7 @@ nav a:hover { background: var(--black); color: var(--gold); }
 
 <script>
 /* ============================================================
-   PAN-AFRICAN YOUTH CONCLAVE 2026 — STANDALONE ENGINE
+   PAN-AFRICAN YOUTH CONFERENCE 2026 — STANDALONE ENGINE
    Zero dependencies · localStorage persistence · Error-safe
    ============================================================ */
 (function() {
@@ -971,7 +971,7 @@ nav a:hover { background: var(--black); color: var(--gold); }
 
   // ===== COUNTDOWN =====
   function renderCountdown() {
-    var target = new Date('2026-04-23T09:00:00+03:00').getTime();
+    var target = new Date('2026-10-15T09:00:00+03:00').getTime();
     var container = $('#heroCountdown');
     if (!container) return;
 
