@@ -90,48 +90,43 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
   gap: 20px; 
 }
 
-/* Updated Logo Styles - Bigger and Better Fitted */
+/* Updated Logo Styles - Clean, Clear, No Spinning Border */
+.logo-area { 
+  display: flex; 
+  align-items: center; 
+  gap: 25px; /* More spacing */
+}
+
 .logo-mark {
-  width: 90px;  /* Increased from 64px */
-  height: 90px; /* Increased from 64px */
+  width: 120px;  /* MUCH BIGGER - increased from 90px */
+  height: 120px; /* MUCH BIGGER - increased from 90px */
   border-radius: 50%;
-  background: conic-gradient(from 0deg, var(--green), var(--gold), var(--red), var(--green));
-  padding: 4px; /* Slightly increased padding */
   flex-shrink: 0;
-  animation: logo-spin 12s linear infinite;
-  overflow: hidden; /* Ensures image fits perfectly */
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--white); /* Clean white background */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Optional: very subtle shadow - remove if not wanted */
+  border: 2px solid rgba(0,0,0,0.05); /* Very subtle border - remove if not wanted */
 }
 
-@keyframes logo-spin { 
-  to { 
-    background: conic-gradient(from 360deg, var(--green), var(--gold), var(--red), var(--green)); 
-  } 
+/* Remove the animation and gradient completely */
+.logo-mark {
+  animation: none; /* Removes spinning */
+  background: none; /* Removes gradient */
+  padding: 0; /* Removes padding */
 }
 
-.logo-inner {
-  width: 100%; 
-  height: 100%; 
-  border-radius: 50%;
-  background: var(--white); /* Changed to white for better image visibility */
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-  overflow: hidden; /* Ensures image stays within circle */
-}
-
-/* Logo Image Placeholder Styles */
 .logo-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Makes image cover the entire area */
+  object-fit: contain; /* Changed from 'cover' to 'contain' to show full logo without cropping */
   object-position: center;
   display: block;
 }
 
-/* Fallback for when image fails to load */
+/* Fallback when image fails to load */
 .logo-image-fallback {
   width: 100%;
   height: 100%;
@@ -141,25 +136,44 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
   background: linear-gradient(135deg, var(--green), var(--gold));
   color: var(--white);
   font-weight: 900;
-  font-size: 24px; /* Larger font for fallback */
+  font-size: 32px; /* Bigger fallback text */
   font-family: var(--font-body);
   letter-spacing: 2px;
 }
 
 .logo-text h1 {
-  font-size: clamp(1.2rem, 2.8vw, 1.8rem); /* Slightly larger */
+  font-size: clamp(1.4rem, 3.2vw, 2.2rem); /* Even larger */
   background: linear-gradient(135deg, var(--green), var(--gold));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1.2;
+  font-weight: 800; /* Bolder */
 }
 .logo-text p { 
-  font-size: 0.85rem; /* Slightly larger */
+  font-size: 1rem; /* Larger */
   color: var(--gray); 
-  letter-spacing: 4px; /* Increased letter spacing */
+  letter-spacing: 5px; /* More spacing */
   text-transform: uppercase; 
-  font-weight: 600; /* Bolder */
-  margin-top: 4px;
+  font-weight: 700; /* Bolder */
+  margin-top: 6px;
+}
+
+/* Responsive adjustments for logo */
+@media (max-width: 768px) {
+  .logo-mark {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-mark {
+    width: 80px;
+    height: 80px;
+  }
+  .logo-image-fallback {
+    font-size: 24px;
+  }
 }
 
 nav { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
@@ -183,21 +197,22 @@ nav a:hover { background: var(--black); color: var(--gold); }
 .btn-edit-off { background: hsla(0,0%,100%,0.15); color: var(--gold); }
 .btn-logout { background: none; border: none; color: var(--red-glow); cursor: pointer; font-size: 1.1rem; }
 
-/* Responsive adjustments for logo */
-@media (max-width: 768px) {
-  .logo-mark {
-    width: 70px;
-    height: 70px;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo-mark {
-    width: 60px;
-    height: 60px;
-  }
-  .logo-image-fallback {
-    font-size: 18px;
+<div class="logo-area">
+  <!-- Clean logo - NO spinning border, just the image -->
+  <div class="logo-mark">
+    <!-- Replace the src with YOUR ACTUAL LOGO URL -->
+    <img 
+      class="logo-image" 
+      src="https://via.placeholder.com/500x500/0D7377/FFFFFF?text=AUSP+LOGO" 
+      alt="Pan-African Youth Conclave Logo"
+      onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'logo-image-fallback\'>AUSP</div>';"
+    >
+  </div>
+  <div class="logo-text">
+    <h1 class="editable" data-key="mainTitle">PAN-AFRICAN YOUTH CONCLAVE 2026</h1>
+    <p class="editable" data-key="tagline">Innovation · Inclusion · Action</p>
+  </div>
+</div>
   }
 }
 
