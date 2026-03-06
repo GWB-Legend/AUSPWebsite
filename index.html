@@ -95,7 +95,7 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
   width: 90px;  /* Increased from 64px */
   height: 90px; /* Increased from 64px */
   border-radius: 50%;
-  background: conic-gradient(from 0deg, var(--green), var(--gold), var(--red), var(--green));
+  background: conic-gradient(from 0deg, var(--yellow), var(--blue), var(--green), var(--white));
   padding: 4px; /* Slightly increased padding */
   flex-shrink: 0;
   animation: logo-spin 12s linear infinite;
@@ -112,8 +112,8 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
 }
 
 .logo-inner {
-  width: 100%; 
-  height: 100%; 
+  width: 250%; 
+  height: 120%; 
   border-radius: 50%;
   background: var(--white); /* Changed to white for better image visibility */
   display: flex; 
@@ -124,8 +124,8 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
 
 /* Logo Image Placeholder Styles */
 .logo-image {
-  width: 450%;
-  height: 250%;
+  width: 650%;
+  height: 350%;
   object-fit: cover; /* Makes image cover the entire area */
   object-position: center;
   display: block;
@@ -133,20 +133,20 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
 
 /* Fallback for when image fails to load */
 .logo-image-fallback {
-  width: 150%;
-  height: 120%;
+  width: 650%;
+  height: 320%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--blue), var(--grey));
-  color: var(--blue);
+  background: linear-gradient(135deg, var(--green), var(--blue));
+  color: var(--green);
   font-weight: 900;
-  font-size: 24px; /* Larger font for fallback */
+  font-size: 28px; /* Larger font for fallback */
   font-family: var(--font-body);
-  letter-spacing: 2px;
+  letter-spacing: 4px;
 }
 
-.logo-text h1 {
+.logo-text h2 {
   font-size: clamp(1.2rem, 2.8vw, 1.8rem); /* Slightly larger */
   background: linear-gradient(135deg, var(--gray), var(--blue));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -155,7 +155,7 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
 }
 .logo-text p { 
   font-size: 0.85rem; /* Slightly larger */
-  color: var(--green); 
+  color: var(--blue); 
   letter-spacing: 4px; /* Increased letter spacing */
   text-transform: uppercase; 
   font-weight: 600; /* Bolder */
@@ -971,7 +971,7 @@ nav a:hover { background: var(--black); color: var(--gold); }
 
   // ===== COUNTDOWN =====
   function renderCountdown() {
-    var target = new Date('2026-04-23T09:00:00+03:00').getTime();
+    var target = new Date('2026-10-21T09:00:00+03:00').getTime();
     var container = $('#heroCountdown');
     if (!container) return;
 
@@ -1086,7 +1086,25 @@ nav a:hover { background: var(--black); color: var(--gold); }
 
   // ===== PILLARS =====
   var pillars = [
-    { icon: '🌍', title: 'Governance & Diplomacy', items: ['Model AU simulations', 'Policy bootcamps', 'Youth parliament'], color: 'border-green' },
+    { icon: '🌍', title: '1.0 Background & Rationale', items: ['The African Union Students' Platform (AUSP) is a continental
+community with a membership spanning over 46 African
+countries and a global diaspora. Founded on the pillars of
+Education, Connection, and Empowerment, AUSP's mission is
+to mobilize Africa's greatest asset, its youth, to combat
+continental challenges and accelerate development.', 'With over 70% of sub-Saharan Africa under 30, the continent
+stands at a pivotal juncture. Harnessing this demographic
+dividend is not an option but an imperative for achieving the
+transformative goals of Africa's Agenda 2063: "The Africa We
+Want" and the global United Nations Sustainable
+Development Goals (Agenda 2030). This conference is
+conceived as AUSP's agship intervention to translate
+potential into power. It will move beyond dialogue to foster
+actionable strategies, placing students and youth at the very
+heart of designing and driving Africa's future', 'Ocial Languages: Reecting the linguistic diversity of the
+African Union, the conference will be conducted in the AU's
+ocial languages: Arabic, English, French, Portuguese,
+Spanish, and Swahili, with provisions for sign language
+interpretation.'], color: 'border-green' },
     { icon: '💻', title: 'Tech & Innovation', items: ['AI for Africa workshop', 'Startup pitch sessions', 'Digital skills labs'], color: 'border-gold' },
     { icon: '🏆', title: 'Entrepreneurship', items: ['Business plan competitions', 'Mentorship matching', 'Investor networking'], color: 'border-red' },
     { icon: '❤️', title: 'Health & Wellbeing', items: ['Mental health forums', 'Sports diplomacy', 'Nutrition awareness'], color: 'border-yellow' },
